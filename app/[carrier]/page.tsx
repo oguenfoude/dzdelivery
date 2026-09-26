@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getCarrier } from "@/lib/carriers";
 import { carrierStats } from "@/lib/fees";
 import CarrierLogo from "@/components/CarrierLogo";
+import SiteBrand from "@/components/SiteBrand";
 import CarrierDetail, { type Availability } from "./CarrierDetail";
 
 type Params = { carrier: string };
@@ -39,19 +40,7 @@ export async function generateMetadata({
 function TopBar() {
   return (
     <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 pt-5">
-      <Link href="/" className="flex items-center gap-2.5">
-        <img
-          src="/logo.svg"
-          alt="شعار dz-delivery"
-          width={32}
-          height={32}
-          className="h-8 w-8"
-        />
-        <span className="text-sm font-extrabold tracking-tight">
-          dz-delivery
-          <span className="mr-2 font-medium text-zinc-400">دليل أسعار التوصيل</span>
-        </span>
-      </Link>
+      <SiteBrand />
       <Link
         href="/"
         className="rounded-full border border-zinc-300 bg-white px-4 py-1.5 text-xs font-bold transition hover:border-zinc-900 active:scale-[0.98]"
@@ -140,7 +129,7 @@ export default async function CarrierPage({
         <div className="flex flex-wrap items-start justify-between gap-6">
           <div className="max-w-2xl">
             <div className="inline-block rounded-2xl border border-zinc-100 bg-white p-3">
-              <CarrierLogo carrier={carrier} />
+              <CarrierLogo carrier={carrier} eager />
             </div>
             <h1 className="mt-5 text-4xl font-black tracking-tight md:text-5xl">
               <span dir="ltr">{carrier.name}</span> · {carrier.nameAr}
