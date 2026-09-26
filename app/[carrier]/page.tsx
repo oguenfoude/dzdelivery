@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { getCarrier } from "@/lib/carriers";
 import { carrierStats } from "@/lib/fees";
 import CarrierLogo from "@/components/CarrierLogo";
-import AdSlot from "@/components/AdSlot";
 import CarrierDetail, { type Availability } from "./CarrierDetail";
 
 type Params = { carrier: string };
@@ -214,8 +213,6 @@ export default async function CarrierPage({
         </dl>
       </header>
 
-      <AdSlot id={`${carrier.id}-page`} />
-
       <div className="mx-auto w-full max-w-6xl px-4">
         <CarrierDetail
           carrierId={carrier.id}
@@ -224,6 +221,37 @@ export default async function CarrierPage({
           initialAvail={initialAvail}
         />
       </div>
+
+      {/* Service strip — exit-point offer */}
+      <section aria-label="خدمة صفحات الهبوط" className="mx-auto w-full max-w-6xl px-4 pt-6">
+        <div className="flex flex-col gap-4 rounded-3xl bg-zinc-950 p-6 text-white md:flex-row md:items-center md:justify-between md:p-7">
+          <div>
+            <h2 className="text-lg font-black tracking-tight md:text-xl">
+              تبيع عبر الإنترنت؟ صفحة هبوط{" "}
+              <span className="text-red-500">تجيب لك الطلبات</span> من أول يوم.
+            </h2>
+            <p className="mt-1 text-sm text-zinc-400">
+              صفحة سريعة + استضافة سنة + ربط Google Sheets + تنبيه إيميل/تيليجرام.
+            </p>
+          </div>
+          <div className="flex shrink-0 flex-wrap items-center gap-2.5">
+            <a
+              href="tel:+213776863561"
+              className="inline-flex min-h-[44px] items-center rounded-xl bg-red-600 px-5 py-2.5 text-sm font-extrabold text-white transition hover:bg-red-500 active:scale-[0.98]"
+            >
+              اتصل: <span dir="ltr" className="mr-1 font-mono tabular-nums">+213776863561</span>
+            </a>
+            <a
+              href="https://wa.me/213776863561"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex min-h-[44px] items-center rounded-xl border border-white/25 px-5 py-2.5 text-sm font-bold text-white transition hover:border-white/70 active:scale-[0.98]"
+            >
+              واتساب
+            </a>
+          </div>
+        </div>
+      </section>
 
       <footer className="mx-auto w-full max-w-6xl px-4 pt-2 text-xs text-zinc-400">
         <p>dz-delivery — أسعار {carrier.name} لـ 58 ولاية · {stats.communes} بلدية</p>

@@ -404,8 +404,8 @@ export default function CarrierDetail({
       <section className="reveal mt-4 rounded-2xl border border-zinc-200 bg-white p-5 md:p-6" style={{ "--i": 2 } as React.CSSProperties}>
         <div className="flex items-baseline justify-between">
           <h2 className="font-extrabold tracking-tight">تحميل البيانات الكاملة</h2>
-          <span className="font-mono text-[11px] tabular-nums text-zinc-400" dir="ltr">
-            58 / {rows.length}
+          <span className="text-[11px] text-zinc-400">
+            58 ولاية · {rows.length} بلدية
           </span>
         </div>
         <div className="mt-2 divide-y divide-zinc-100 border-t border-zinc-100">

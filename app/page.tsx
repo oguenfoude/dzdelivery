@@ -1,7 +1,6 @@
 ﻿import Link from "next/link";
 import { carriers } from "@/lib/carriers";
 import CarrierLogo from "@/components/CarrierLogo";
-import AdSlot from "@/components/AdSlot";
 
 const STEPS = [
   {
@@ -111,10 +110,7 @@ export default function Home() {
       {/* Service — dark band right after hero: unmissable */}
       <section id="service" className="scroll-mt-6 bg-zinc-950 text-white">
         <div className="mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
-          <p className="font-mono text-[11px] font-bold tabular-nums text-zinc-500" dir="ltr">
-            / my service
-          </p>
-          <h2 className="mt-2 max-w-[22ch] text-3xl font-black leading-[1.35] tracking-tight md:text-4xl">
+          <h2 className="max-w-[22ch] text-3xl font-black leading-[1.35] tracking-tight md:text-4xl">
             تبيع عبر الإنترنت؟ صفحة هبوط{" "}
             <span className="text-red-500">تجيب لك الطلبات</span> من أول يوم.
           </h2>
@@ -181,9 +177,6 @@ export default function Home() {
 
       {/* Agencies — equal size cards */}
       <section className="mx-auto w-full max-w-6xl px-4 pb-10">
-        <p className="mb-2 font-mono text-[11px] font-bold tabular-nums text-zinc-400" dir="ltr">
-          / carriers
-        </p>
         <div className="reveal mb-5 flex items-end justify-between" style={{ "--i": 2 } as React.CSSProperties}>
           <h2 className="text-2xl font-black tracking-tight">شركات التوصيل</h2>
           <span className="font-mono text-xs tabular-nums text-zinc-400" dir="ltr">
@@ -324,13 +317,8 @@ export default function Home() {
         </div>
       </section>
 
-      <AdSlot id="home-agencies" />
-
       {/* Steps — numbered rows, not cards */}
       <section className="mx-auto w-full max-w-6xl px-4 pb-10">
-        <p className="mb-2 font-mono text-[11px] font-bold tabular-nums text-zinc-400" dir="ltr">
-          / guide
-        </p>
         <h2 className="text-2xl font-black tracking-tight">كيف تستعمل الدليل؟</h2>
         <ol className="mt-4 divide-y divide-zinc-200 border-y border-zinc-200">
           {STEPS.map((s) => (
