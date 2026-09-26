@@ -81,6 +81,30 @@
   animation: shimmer 1.4s ease-in-out infinite;
 }
 
+/* Ad slot — slow light sweep, GPU-safe */
+@keyframes ad-sweep {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.ad-slot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent 40%,
+    rgba(220, 38, 38, 0.05) 50%,
+    transparent 60%
+  );
+  animation: ad-sweep 6s ease-in-out infinite;
+}
+
 /* Live status dot */
 @keyframes breathe {
   0%,
@@ -111,6 +135,7 @@
   }
   .skel::after,
   .dot-live,
+  .ad-slot::after,
   .ticker-track {
     animation: none;
   }
