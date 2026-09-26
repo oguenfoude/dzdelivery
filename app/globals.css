@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-tajawal), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-mono: var(--font-jbmono), ui-monospace, "SFMono-Regular", monospace;
+  --color-brand: #dc2626;
+  --color-brand-deep: #991b1b;
+  --color-ink: #09090b;
+  --color-paper: #fafaf9;
+}
+
+::selection {
+  background: #dc2626;
+  color: #fff;
+}
+
+/* Staggered entrance — transform/opacity only (GPU-safe) */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+
+/* Wilaya ticker */
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+.ticker-track {
+  animation: ticker 60s linear infinite;
+}
+
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+/* Skeleton shimmer for loading rows */
+@keyframes shimmer {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.skel {
+  position: relative;
+  overflow: hidden;
+  background: #e4e4e7;
+  border-radius: 0.375rem;
+}
+
+.skel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+/* Live status dot */
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.86);
+  }
+}
+
+.dot-live {
+  animation: breathe 2.2s ease-in-out infinite;
+}
+
+/* Subtle dot texture for hero */
+.dot-grid {
+  background-image: radial-gradient(#d4d4d8 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    animation: none;
+  }
+  .skel::after,
+  .dot-live,
+  .ticker-track {
+    animation: none;
+  }
+}
