@@ -1,8 +1,6 @@
 const HERO_STATS = [
   { v: "58", l: "ولاية" },
   { v: "2", l: "شركات توصيل" },
-  { v: "3040", l: "بلدية بأسعار التوصيل" },
-  { v: "من 250 دج", l: "أقل سعر مكتب" },
 ];
 
 export default function Hero() {
@@ -28,7 +26,7 @@ export default function Hero() {
         </p>
       </div>
       <dl
-        className="reveal mt-8 grid grid-cols-1 gap-6 border-t border-zinc-200 pt-6 sm:grid-cols-2 lg:grid-cols-4"
+        className="reveal mt-8 grid grid-cols-2 gap-6 border-t border-zinc-200 pt-6"
         style={{ "--i": 1 } as React.CSSProperties}
       >
         {HERO_STATS.map((s) => (
