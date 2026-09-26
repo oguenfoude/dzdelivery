@@ -151,9 +151,9 @@ export default async function CarrierPage({
               { v: stats.homeMin != null ? "من " + stats.homeMin + " دج" : "—", l: "توصيل للمنزل" },
               { v: stats.deskMin != null ? "من " + stats.deskMin + " دج" : "—", l: "مكتب" },
             ].map((s) => (
-              <div key={s.l}>
-                <dd className="font-mono text-2xl font-bold tabular-nums">{s.v}</dd>
-                <dt className="mt-0.5 text-xs text-zinc-400">{s.l}</dt>
+              <div key={s.l} className="flex flex-col">
+                <dt className="order-2 mt-0.5 text-xs text-zinc-400">{s.l}</dt>
+                <dd className="order-1 font-mono text-2xl font-bold tabular-nums">{s.v}</dd>
               </div>
             ))}
           </dl>

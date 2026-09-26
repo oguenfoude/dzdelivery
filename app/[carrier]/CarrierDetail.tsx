@@ -377,7 +377,17 @@ export default function CarrierDetail({
                       </tr>
                     );
                   })}
-                  {filtered.length === 0 && (
+                  {filtered.length === 0 && rows.length === 0 && (
+                    <tr>
+                      <td colSpan={4} className="px-4 py-12 text-center">
+                        <p className="font-extrabold">لا توجد بلديات مسعرة في هذه الولاية</p>
+                        <p className="mt-1 text-xs text-zinc-500">
+                          هذه الشركة لا تغطي هذه الولاية حالياً — جرّب ولاية أخرى.
+                        </p>
+                      </td>
+                    </tr>
+                  )}
+                  {filtered.length === 0 && rows.length > 0 && (
                     <tr>
                       <td colSpan={4} className="px-4 py-12 text-center">
                         <p className="font-extrabold">لا توجد بلدية بهذا الاسم</p>

@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="reveal max-w-3xl" style={{ "--i": 0 } as React.CSSProperties}>
         <p className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-bold text-zinc-600">
           <span className="dot-live h-1.5 w-1.5 rounded-full bg-emerald-500" />
-          RedEx · جزء من إيكوتراك — أسعار حقيقية بالدينار
+            RedEx وأندرسون — أسعار حقيقية بالدينار
         </p>
         <h1 className="mt-5 text-4xl font-black leading-[1.3] tracking-tight md:text-6xl md:leading-[1.25]">
           سعر التوصيل{" "}
