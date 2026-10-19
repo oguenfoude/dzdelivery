@@ -4,6 +4,10 @@ Standalone Next.js directory of Algeria delivery fees. Currently ships **RedEx**
 data (58 wilayas, 1542 communes, domicile + stop-desk fees in DZD) with a
 carrier registry so adding new carriers later is trivial. No env vars needed.
 
+## Screenshot
+
+![Home](screenshots/home.png)
+
 ## Run locally
 
 ```bash
